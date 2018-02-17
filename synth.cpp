@@ -40,6 +40,8 @@ void Synth::processAudio() {
 		}
 		stream.write(buffer);
   	} 
+
+  	stream.finalise();
 }
 
 void Synth::interface() {
@@ -49,11 +51,7 @@ void Synth::interface() {
 	std::cout << "press 'q' to quit" << std::endl;
 	std::cin >> in;
 
-	if (in == 'q') {
-
-		running = false;
-		stream.finalise();
-	}
+	if (in == 'q') running = false;
 }
 
 
