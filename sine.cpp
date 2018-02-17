@@ -26,9 +26,9 @@ void Sine::processSamples(float (&buffer)[BUFFERSIZE]) {
 	for (auto i = 0; i <= BUFFERSIZE; i += N_CHANNELS) {
 
    		buffer[i]   = amplitude * sin(x * radiansPerSample);
-    	buffer[i+1] = amplitude * sin(x * radiansPerSample);
-    	x++;
+    		buffer[i+1] = amplitude * sin(x * radiansPerSample);
+    		x++;
 
-    	if (x >= samplesPerCycle) x = 0;
+    		if (x >= samplesPerCycle) x = 0;
   	}
 }
