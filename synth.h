@@ -14,7 +14,9 @@ public:
 	~Synth();
 	void init();
 	void processAudio();
+	void interface();
 
+private:
 	Audio_IO stream;
 	vector<unique_ptr<Oscillator>> oscillators;
 	bool running;

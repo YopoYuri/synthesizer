@@ -1,16 +1,17 @@
+#include <thread>
 #include "synth.h"
 
 int main() {
 
-	Synth synth;
-	char in;
+	static Synth synth;
 
 	synth.init();
-	synth.processAudio();
-
-	std::cout << "press 'q' to quit" << std::endl;
-	std::cin >> in;
+	std::thread audioThread(&Synth::processAudio, &synth);
+	std::thread interfaceThread(&Synth::interface, &synth);
+	audioThread.join();
+	interfaceThread.join();
 }
+
 
 
 

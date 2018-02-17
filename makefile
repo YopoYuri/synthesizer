@@ -1,6 +1,6 @@
 CC		= g++
 CFLAGS	= -Wall -std=c++17 
-LDFLAGS	= -ljack -lportaudio 
+LDFLAGS	= -ljack -lportaudio -lpthread
 SRC		= main.cpp synth.cpp sine.cpp oscillator.cpp audio_io.cpp
 OBJ		= $(SRC:.cpp=.o)
 TARGET	= synth 
